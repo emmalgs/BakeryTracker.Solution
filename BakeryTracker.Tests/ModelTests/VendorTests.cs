@@ -6,8 +6,13 @@ using System.Collections.Generic;
 namespace BakeryTracker.Tests
 {
   [TestClass]
-  public class VendorTests
+  public class VendorTests : IDisposable
   {
+    public void Dispose()
+    {
+      Vendor.ClearAll();
+    }
+
     [TestMethod]
     public void VendorClass_CreatesTypeVendor_Vendor()
     {
@@ -29,6 +34,15 @@ namespace BakeryTracker.Tests
       Vendor newVendor = new Vendor("Victors JavaHut", "Rundown coffeeshop by motel");
       string expected = "Rundown coffeeshop by motel";
       Assert.AreEqual(expected, newVendor.Description);
+    }
+
+    [TestMethod]
+    public void Vendor_AddsVendorToListOfAllVendors_Int()
+    {
+      Vendor victor = new Vendor("Victors JavaHut", "Rundown coffeeshop by motel");
+      Vendor greg = new Vendor("Greg", "Some guy that asked to order wholesale");
+      int expected = 2;
+      Assert.AreEqual(expected, Vendor.AllVendors.Count);
     }
   }
 }
