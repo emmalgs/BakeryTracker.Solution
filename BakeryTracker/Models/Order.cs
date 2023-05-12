@@ -1,6 +1,6 @@
 namespace BakeryTracker.Models
 {
-  public class Order
+  public class Order : Inventory
   {
 
   }
