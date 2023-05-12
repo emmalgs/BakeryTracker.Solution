@@ -22,5 +22,12 @@ namespace BakeryTracker.Tests
       float expected = 1.50F;
       Assert.AreEqual(expected, Inventory.Pastry["croissant"]);
     }
+
+    [TestMethod]
+    public void Inventory_ContainsBreadInventory_Float()
+    {
+      float expected = 5.55F;
+      Assert.AreEqual(expected, Inventory.Bread["squirrel swirl"]);
+    }
   }
 }
