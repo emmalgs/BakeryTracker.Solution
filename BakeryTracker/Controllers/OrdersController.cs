@@ -13,5 +13,12 @@ namespace BakeryTracker.Controllers
       Vendor foundVendor = Vendor.Find(vendorId);
       return View(foundVendor);
     }
+
+    [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
+    public ActionResult Show(int vendorId, int orderId)
+    {
+      Order order = Order.Find(orderId);
+      return View(order);
+    }
   }
 }

@@ -1,0 +1,13 @@
+@{
+  Layout = "_Layout";
+}
+
+<h1>Order Details</h1>
+
+<p>@Model.Title.ToUpper()</p>
+<p>@Model.Amount</p>
+<p>@Model.Price.ToString("C2")</p>
+<p>@Model.Total.ToString("C2")</p>
+<p>@Model.Date</p>
+<p>@Model.Type.ToUpper()</p>
+

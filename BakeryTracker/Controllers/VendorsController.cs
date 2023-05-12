@@ -32,5 +32,14 @@ namespace BakeryTracker.Controllers
       Vendor foundVendor = Vendor.Find(id);
       return View(foundVendor);
     }
+
+    [HttpPost("/vendors/{vendorId}/orders")]
+    public ActionResult Create(int vendorId, string item, int qty)
+    {
+      Vendor foundVendor = Vendor.Find(vendorId);
+      Order newOrder = new Order(item, qty);
+      foundVendor.AddOrder(newOrder);
+      return View("Show", foundVendor);
+    }
   }
 }
