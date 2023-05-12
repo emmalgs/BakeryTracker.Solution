@@ -12,7 +12,7 @@ namespace BakeryTracker.Models
     public float Price { get; set; }
     public DateTime Date { get; set; }
     public string Type { get; set; }
-    public static List<Order> Orders { get; set; } = new List<Order>();
+    public static List<Order> Orders { get; set; } = new List<Order> {};
     public int Id { get; }
 
     public Order(string item, int amount)
