@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace BakeryTracker.Models
 {
-  public abstract class Inventory
+  public class Inventory
   {
     public static Dictionary<string, float> Pastry { get; } = new Dictionary<string, float>
     {

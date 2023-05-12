@@ -1,12 +1,12 @@
 namespace BakeryTracker.Models
 {
-  public class Order : Inventory
+  public class Order
   {
     public float Total { get; set; }
     public Order(string item, int amount)
     {
       float price;
-      if (Pastry.TryGetValue(item, out price) || Bread.TryGetValue(item, out price))
+      if (Inventory.Pastry.TryGetValue(item, out price) || Inventory.Bread.TryGetValue(item, out price))
       {
         Total = amount * price;
       }

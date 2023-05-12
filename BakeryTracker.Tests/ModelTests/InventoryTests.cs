@@ -10,13 +10,6 @@ namespace BakeryTracker.Tests
   {
 
     [TestMethod]
-    public void Inventory_InstanceOfOrderInheritsTypeInventory_Order()
-    {
-      Order newOrder = new Order("croissant", 5);
-      Assert.AreEqual(true, (newOrder is Inventory));
-    }
-
-    [TestMethod]
     public void Inventory_ContainsPastryInventory_Float()
     {
       float expected = 1.50F;
