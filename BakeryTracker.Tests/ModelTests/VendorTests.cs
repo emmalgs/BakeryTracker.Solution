@@ -61,5 +61,13 @@ namespace BakeryTracker.Tests
       int expected = Vendor.AllVendors.Count;
       Assert.AreEqual(expected, victor.Id);
     }
+
+    [TestMethod]
+    public void Find_FindsVendorAtId_Vendor()
+    {
+      Vendor victor = new Vendor("Victors JavaHut", "Rundown coffeeshop by motel");
+      Vendor greg = new Vendor("Greg", "Some guy that asked to order wholesale");
+      Assert.AreEqual(greg, Vendor.Find(greg.Id));
+    }
   }
 }

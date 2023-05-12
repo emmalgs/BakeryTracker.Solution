@@ -28,5 +28,10 @@ namespace BakeryTracker.Models
     {
       Orders.Add(order);
     }
+
+    public static Vendor Find(int searchId)
+    {
+      return AllVendors[searchId-1];
+    }
   }
 }
