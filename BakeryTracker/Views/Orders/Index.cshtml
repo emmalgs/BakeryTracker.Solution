@@ -16,21 +16,35 @@
   <p>You have no orders</p>
 }
 
+<table class="table-bordered">
+  <th scope="col">Vendor</th>
+  <th scope="col">Item(s)</th>
+  <th scope="col">Qty</th>
+  <th scope="col">Price/Item</th>
+  <th scope="col">Date</th>
+  <th scope="col">Category</th>
+  <th scope="col">Total</th>
 @foreach (Vendor vendor in Vendor.AllVendors)
 {
-  <h4>@vendor.Name</h4>
+  <tr>
+    <th rowspan="@(vendor.Orders.Count + 1)"><a href='/vendors/@vendor.Id'>@vendor.Name</a></th>
+
   @if (vendor.Orders.Count == 0)
   {
-    <p>No orders</p>
+    <td colspan="6">No orders</td>
   }
-  <ul>
+  </tr>
+
   @foreach (Order order in vendor.Orders)
   {
-    <li>
-      <p>@order.Title.ToUpper()</p> 
-      <p>Qty: @order.Amount</p> 
-      <p>Total: @order.Total.ToString("C2")</p>
-    </li>
+    <tr>
+      <td scope="row">@order.Title.ToUpper()</td> 
+      <td>@order.Amount</td> 
+      <td>@order.Price.ToString("C2")</td>
+      <td>@order.Date</td>
+      <td>@order.Type</td>
+      <td>@order.Total.ToString("C2")</td>
+    </tr>
   }
-  </ul>
 }
+</table>

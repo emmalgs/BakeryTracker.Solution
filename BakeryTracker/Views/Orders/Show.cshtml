@@ -4,10 +4,21 @@
 
 <h1>Order Details</h1>
 
-<p>@Model.Title.ToUpper()</p>
-<p>@Model.Amount</p>
-<p>@Model.Price.ToString("C2")</p>
-<p>@Model.Total.ToString("C2")</p>
-<p>@Model.Date</p>
-<p>@Model.Type.ToUpper()</p>
-
+<table class="table-bordered">
+  <tr>
+    <th scope="col">Item</th>
+    <th scope="col">Qty</th>
+    <th scope="col">Price/Item</th>
+    <th scope="col">Date</th>
+    <th scope="col">Category</th>
+    <th scope="col">Total</th>
+  </tr>
+  <tr>
+    <th scope="row">@Model.Title.ToUpper()</td>
+    <td>@Model.Amount</td>
+    <td>@Model.Price.ToString("C2")</td>
+    <td>@Model.Date</td>
+    <td>@Model.Type.ToUpper()</td>
+    <td>@Model.Total.ToString("C2")</td>
+  </tr>
+</table>
