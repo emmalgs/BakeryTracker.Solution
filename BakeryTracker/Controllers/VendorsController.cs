@@ -23,7 +23,14 @@ namespace BakeryTracker.Controllers
     public ActionResult Index(string[] vendor)
     {
       Vendor newVendor = new Vendor(vendor[0], vendor[1]);
-      return View();
+      return RedirectToAction("Index");
+    }
+
+    [HttpGet("/vendors/{id}")]
+    public ActionResult Show(int id)
+    {
+      Vendor foundVendor = Vendor.Find(id);
+      return View(foundVendor);
     }
   }
 }

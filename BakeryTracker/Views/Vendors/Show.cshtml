@@ -1,0 +1,24 @@
+@{
+  Layout = "_Layout";
+}
+
+@using BakeryTracker.Models
+
+<h1>Vendor Info</h1>
+
+<h3>@Model.Name</h3>
+<h5>@Model.Description</h5>
+
+@if (Model.Orders.Count == 0)
+{
+  <p>No orders yet</p>
+}
+
+<ul>
+  @foreach (Order order in @Model.Orders)
+  {
+    <li><a href='/vendors/@Model.Id/orders/@order.Id'>@order.Title</a></li>
+  }
+</ul>
+
+<p><a href='/vendors/@Model.Id/orders/new'>Add an order</a></p>
