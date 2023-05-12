@@ -23,5 +23,14 @@ namespace BakeryTracker.Tests
       float expected = 7.50F;
       Assert.AreEqual(expected, newOrder.Total);
     }
+
+    [TestMethod]
+    public void Order_HasTitleInfo_String()
+    {
+      Order newOrder = new Order("croissant", 5);
+      string expected = "croissant";
+      Assert.AreEqual(expected, newOrder.Title);
+    }
+
   }
 }
