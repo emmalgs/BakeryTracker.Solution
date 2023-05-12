@@ -1,0 +1,67 @@
+:root {
+  --main-color: #83B692;
+  --main-contrast: #F9ADA0;
+  --font-color: #070600;
+  --secondary-color: #F3B700;
+  --secondary-contrast: #05668D;
+}
+
+#header {
+  background-image: url('../img/bread.png');
+  background-position: center;
+  height: 30vh;
+  width: 100vw;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: var(--main-color);
+}
+
+#header h1 {
+  text-align: center;
+  padding-top: 15vh;
+  padding-left: 5em;
+  font-size: 1.8em;
+}
+
+#header h1 a {
+  text-decoration: none;
+  color: var(--main-contrast);
+  text-shadow: 1px 1px 1px var(--font-color);
+}
+
+#header h1 a:hover {
+  color: var(--secondary-contrast);
+}
+
+#navbar {
+  padding: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: var(--main-contrast);
+}
+
+.btn {
+  border: 2px solid var(--secondary-contrast);
+}
+
+#navbar img {
+  height: 6em;
+}
+
+.main {
+  padding: 20px;
+  margin: 1em;
+  margin-bottom: 2em;
+  height: 100vh;
+}
+
+#footer {
+  background-color: var(--secondary-color);
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  height: 18vh;
+  display: flex;
+  padding: 20px;
+  justify-content: space-evenly;
+}

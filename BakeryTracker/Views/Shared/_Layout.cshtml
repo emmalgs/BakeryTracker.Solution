@@ -13,6 +13,9 @@
   <body>
     @await Html.PartialAsync("Header")
     @await Html.PartialAsync("NavBar")
+    <div class="main">
     @RenderBody()
+    </div>
+    @await Html.PartialAsync("Footer")
   </body>
 </html>
