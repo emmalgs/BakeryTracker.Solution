@@ -1,0 +1,17 @@
+@{
+  Layout = "_Layout";
+}
+
+@using BakeryTracker.Models
+
+<div class="vendors">
+  @if (Vendor.AllVendors.Count == 0)
+  {
+    <p>You have no vendors currently</p>
+  }
+
+  @foreach (Vendor vendor in Vendor.AllVendors)
+  {
+    <p>@vendor.Name</p>
+  }
+</div>

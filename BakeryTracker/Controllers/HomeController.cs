@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace BakeryTracker.Controllers
 {
-  public class HomeController : Controllers
+  public class HomeController : Controller
   {
     [HttpGet("/")]
     public ActionResult Index()
