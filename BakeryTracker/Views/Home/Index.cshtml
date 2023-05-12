@@ -1,7 +1,15 @@
 @{
   Layout = "_Layout";
 }
+@using BakeryTracker.Models
 
-<a href="/vendors/new">Add New Vendor</a>
-<a href="/vendors">View All Vendors</a>
-<a href="/orders">View All Orders</a>
+<h2>Welcome back, Pierre!</h2>
+
+@if (Order.Orders.Count == 0)
+{
+  <p>You have no orders</p>
+}
+else
+{
+  <p>You have @Order.Orders.Count orders</p>
+}

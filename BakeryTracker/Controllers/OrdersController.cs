@@ -7,6 +7,13 @@ namespace BakeryTracker.Controllers
 {
   public class OrdersController : Controller
   {
+
+    [HttpGet("/orders")]
+    public ActionResult Index()
+    {
+      return View();
+    }
+    
     [HttpGet("/vendors/{vendorId}/orders/new")]
     public ActionResult New(int vendorId)
     {

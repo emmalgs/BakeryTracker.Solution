@@ -1,0 +1,36 @@
+@{
+  Layout = "_Layout";
+}
+
+@using BakeryTracker.Models
+
+<h2>All orders</h2>
+
+@if (Vendor.AllVendors.Count == 0)
+{
+  <p>You have no vendors</p>
+}
+
+@if (Order.Orders.Count == 0)
+{
+  <p>You have no orders</p>
+}
+
+@foreach (Vendor vendor in Vendor.AllVendors)
+{
+  <h4>@vendor.Name</h4>
+  @if (vendor.Orders.Count == 0)
+  {
+    <p>No orders</p>
+  }
+  <ul>
+  @foreach (Order order in vendor.Orders)
+  {
+    <li>
+      <p>@order.Title.ToUpper()</p> 
+      <p>Qty: @order.Amount</p> 
+      <p>Total: @order.Total.ToString("C2")</p>
+    </li>
+  }
+  </ul>
+}
