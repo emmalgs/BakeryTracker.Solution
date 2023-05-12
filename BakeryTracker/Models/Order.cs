@@ -13,6 +13,7 @@ namespace BakeryTracker.Models
     public DateTime Date { get; set; }
     public string Type { get; set; }
     public static List<Order> Orders { get; set; } = new List<Order>();
+    public int Id { get; }
 
     public Order(string item, int amount)
     {
@@ -26,6 +27,7 @@ namespace BakeryTracker.Models
         Date = DateTime.Now;
         Type = "pastry";
         Orders.Add(this);
+        Id = Orders.Count;
       }
       else if (Inventory.Bread.TryGetValue(item, out price))
       {
@@ -36,6 +38,7 @@ namespace BakeryTracker.Models
         Date = DateTime.Now;
         Type = "bread";
         Orders.Add(this);
+        Id = Orders.Count;
       }
     }
 

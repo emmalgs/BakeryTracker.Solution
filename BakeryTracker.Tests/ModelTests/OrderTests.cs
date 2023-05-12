@@ -78,5 +78,16 @@ namespace BakeryTracker.Tests
       int expected = 4;
       Assert.AreEqual(expected, Order.Orders.Count);
     }
+
+    [TestMethod]
+    public void Order_OrderHasId_Int()
+    {
+      Order croissant = new Order("croissant", 5);
+      Order pirates = new Order("pirates booty", 6);
+      Order flapjack = new Order("flapjack bingo", 3);
+      Order coco = new Order("coco nono", 3);
+      int expected = 4;
+      Assert.AreEqual(expected, coco.Id);
+    }
   }
 }
