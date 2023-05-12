@@ -1,15 +1,18 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
 using BakeryTracker.Models;
 using System;
 using System.Globalization;
+using System.Collections.Generic;
 
 namespace BakeryTracker.Tests
 {
   [TestClass]
-  public class OrderTests
+  public class OrderTests : IDisposable
   {
-
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
     [TestMethod]
     public void OrderClass_CreatesInstanceOfTypeOrder_Order()
     {
@@ -55,6 +58,25 @@ namespace BakeryTracker.Tests
       Order newOrder = new Order("croissant", 5);
       string expected = "2023-05-12";
       Assert.AreEqual(expected, newOrder.Date.ToString("yyyy-MM-dd"));
+    }
+
+    [TestMethod]
+    public void Order_HasType_String()
+    {
+      Order newOrder = new Order("croissant", 5);
+      string expected = "pastry";
+      Assert.AreEqual(expected, newOrder.Type);
+    }
+
+    [TestMethod]
+    public void Order_HasListOfOrders_Int()
+    {
+      Order croissant = new Order("croissant", 5);
+      Order pirates = new Order("pirates booty", 6);
+      Order flapjack = new Order("flapjack bingo", 3);
+      Order coco = new Order("coco nono", 3);
+      int expected = 4;
+      Assert.AreEqual(expected, Order.Orders.Count);
     }
   }
 }

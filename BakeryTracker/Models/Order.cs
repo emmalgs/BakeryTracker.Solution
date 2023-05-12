@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 
 namespace BakeryTracker.Models
@@ -11,6 +12,7 @@ namespace BakeryTracker.Models
     public float Price { get; set; }
     public DateTime Date { get; set; }
     public string Type { get; set; }
+    public static List<Order> Orders { get; set; } = new List<Order>();
 
     public Order(string item, int amount)
     {
@@ -23,6 +25,7 @@ namespace BakeryTracker.Models
         Price = price;
         Date = DateTime.Now;
         Type = "pastry";
+        Orders.Add(this);
       }
       else if (Inventory.Bread.TryGetValue(item, out price))
       {
@@ -32,7 +35,13 @@ namespace BakeryTracker.Models
         Price = price;
         Date = DateTime.Now;
         Type = "bread";
+        Orders.Add(this);
       }
+    }
+
+    public static void ClearAll()
+    {
+      Orders.Clear();
     }
   }
 }
